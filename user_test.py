@@ -25,7 +25,7 @@ class TestUser(unittest.TestCase):
         """
         test case to test a method that saves the new_user
         """
-        self.new_user.save_user(self) #saving new user
+        self.new_user.save_newUser() #saving new user
         self.assertEqual(len(User.user_list),1)
 
 if __name__ == '__main__':

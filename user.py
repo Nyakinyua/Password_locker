@@ -2,7 +2,7 @@ class User:
     """
     class that generates new instance of user
     """
-    # user_list = []  #list to store contacts
+    user_list = []  #list to store contacts
     first_name = ''
     sur_name = ''
     mobile_number = ''
@@ -30,3 +30,6 @@ class User:
 
     def get_new_password(self):
         return self.new_password
+
+    def save_newUser(self):
+        User.user_list.append(self)
