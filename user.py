@@ -31,5 +31,9 @@ class User:
     def get_new_password(self):
         return self.new_password
 
-    def save_newUser(self):
+    def save_user(self):
+
+        """
+        function to save a new instance of user
+        """
         User.user_list.append(self)
