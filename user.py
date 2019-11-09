@@ -1,13 +1,13 @@
 class User:
     """
-    class that generate new instance of user
+    class that generates new instance of user
     """
     # user_list = []  #list to store contacts
     first_name = ''
     sur_name = ''
     mobile_number = ''
     new_password = ''
-    
+
 
     
     def __init__(self,first_name,sur_name,mobile_number,new_password):
