@@ -10,6 +10,7 @@ class TestUser(unittest.TestCase):
         """
         set up method to run each test case
         """
-        self.new_user = User("Joyce","Nyakinyua","0721317715","joynya123")
+        self.new_user = User("Joyce","Nyakinyua","0721317715","joynya123") #new user object
+        
 
         
