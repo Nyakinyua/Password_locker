@@ -1,12 +1,15 @@
-class User:
+import unittest #importing unittest module
+from user import User #importing user class
+
+class TestUser(unittest.TestCase):
     """
-    class that generate new instance of user
+    Test class that defines test cases for the user
     """
-    def __init__(self,first_name,sur_name,mobile_number,new_password):
+
+    def setUp(self):
         """
-        __init__method to help us define the properties of class User
+        set up method to run each test case
         """
-        self.first_name= first_name
-        self.sur_name=sur_name
-        self.mobile_number=mobile_number
-        self.new_password=new_password
+        self.new_user = User("Joyce","Nyakinyua","0721317715","joynya123")
+
+        
