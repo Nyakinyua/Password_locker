@@ -35,6 +35,13 @@ class Credentials:
             """
             Credentials.credentials_list.append(self)
 
+        def generate_password(stringLength):
+            """
+            Generate a random string with the combination of lowercase and uppercase letters 
+            """
+            get_pass= ''.join(random.choice(letters) for i in range(stringLength))
+            return get_pass
+
         @classmethod
         def display_credentials(cls,account):
             	 
@@ -51,13 +58,13 @@ class Credentials:
 
 
 
-        # @classmethod
-	    # def copy_credential(cls,account):
-        #     '''
-        #     Class method that copies a credential's info after the credential's aaccount name is entered
-        #     '''
-        #     find_credential = Credentials.find_by_account(account)
-        #     return pyperclip.copy(find_credential.password)
+        @classmethod
+	    def copy_credential(cls,account):
+            '''
+            Class method that copies a credential's info after the credential's aaccount name is entered
+            '''
+            find_credential = Credentials.find_by_account(account)
+            return pyperclip.copy(find_credential.password)
 
         def delete_credentials(self):
 
@@ -68,11 +75,4 @@ class Credentials:
             Credentials.credentials_list.remove(self)
 
  
-        def generate_password(stringLength):
-            """Generate a random string with the combination of lowercase and uppercase letters 
-            """
-
-            letters = string.ascii_letters
-            made_password =''.join(random.choice(letters) for i in range(stringLength))
-            return made_password
-
+       
