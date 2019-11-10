@@ -1,6 +1,6 @@
 import random #to perform random generations
 import string # to give various string constants which conain ASCII characters of all cases
-
+import pyperclip
 
 class Credentials:
         """
@@ -34,6 +34,31 @@ class Credentials:
             function to save a newly created account instance
             """
             Credentials.credentials_list.append(self)
+
+        @classmethod
+        def display_credentials(cls,account):
+            	 
+            return cls.credentials_list
+
+        def find_by_account(cls,account):
+            """
+            Method that takes in account name and returns the credentials
+            """
+       
+            for credentials in cls.credentials_list:
+                if credentials.account_name == account:
+                    return credentials
+
+
+
+        # @classmethod
+	    # def copy_credential(cls,account):
+        #     '''
+        #     Class method that copies a credential's info after the credential's aaccount name is entered
+        #     '''
+        #     find_credential = Credentials.find_by_site_name(account_name)
+        #     return pyperclip.copy(find_credential.password)
+
 
  
     # def generate_password(stringLength):
