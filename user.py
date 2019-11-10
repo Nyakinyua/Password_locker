@@ -37,3 +37,5 @@ class User:
         function to save a new instance of user
         """
         User.user_list.append(self)
+
+

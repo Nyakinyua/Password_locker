@@ -1,5 +1,6 @@
 import unittest #importing unittest module
 from user import User #importing user class
+from credentials import Credentials #importing credentials class
 
 class TestUser(unittest.TestCase):
     """
@@ -55,12 +56,26 @@ class TestCredentials(unittest.TestCase):
         """
         function to set up a method to be used in running each testcase
         """
-        self.new_credentials = credentials("Instagram", "wanjirunya","nyakinyua254")  
+        self.new_credentials = Credentials("Instagram", "wanjirunya","nyakinyua254")  
 
     def test_init(self):
         """
         Test to check if initialization of credentiantil instances is done
         """
+        self.assertEqual(self.new_credentials.account_name,'Instagram')
+        self.assertEqual(self.new_credentials.username,'wanjirunya')
+        self.assertEqual(self.new_credentials.acc_password,'nyakinyua254')
+
+    def test_save_credentials(self):
+        """
+        Test to check if new credential created is appended to credentials list
+        """
+        self.new_credentials.save_credentials()
+        cred2 = Credentials("Snapchat","Johndoe","snp100")
+        cred2.save_credentials()
+        self.assertEqual(len(Credentials.credentials_list),2)
+
+        
 
 
 
