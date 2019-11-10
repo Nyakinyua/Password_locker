@@ -91,15 +91,25 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual(len(Credentials.display_credentials(cred2.username)),3)
 
 
+    # def test_find_credential_by_account(self):
+    #     '''
+    #     Test to check if the find_credential_by_account method returns the correct credential
+    #     '''
+    #     self.new_credentials.save_credentials()
+    #     cred2 = Credentials("Snapchat","Johndoe","snp100")
+    #     cred2.save_credentials()
+    #     credential_exists = Credentials.find_by_account('Snapchat')
+    #     self.assertEqual(credential_exists,cred2)
+
+
     def test_find_credential_by_account(self):
-        '''
-        Test to check if the find_credential_by_account method returns the correct credential
-        '''
-        self.new_credentials.save_credentials()
-        cred2 = Credentials("Snapchat","Johndoe","snp100")
-        cred2.save_credentials()
-        credential_exists = Credentials.find_by_account('Snapchat')
-        self.assertEqual(credential_exists,cred2)
+         self.new_credentials.save_credentials()
+         cred2 = Credentials("Snapchat","Johndoe","snp100")
+         cred2.save_credentials()
+
+         found_credential = Credentials.find_by_account('Snapchat')
+
+         self.assertEqual(found_credential,cred2)
     # def test_copy_credential(self):
     #     '''
     #     Test to check if the copy a credential method copies the correct credential

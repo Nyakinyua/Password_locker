@@ -59,6 +59,13 @@ class Credentials:
         #     find_credential = Credentials.find_by_site_name(account_name)
         #     return pyperclip.copy(find_credential.password)
 
+    def delete_credentials(self):
+
+        '''
+        A method that  deletes a saved credential from the credentials_list
+        '''
+
+        Contact.contact_list.remove(self)
 
  
     # def generate_password(stringLength):
