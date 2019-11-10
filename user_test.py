@@ -26,7 +26,7 @@ class TestUser(unittest.TestCase):
         test case to test a method that saves the new_user
         """
         self.new_user.save_user() #saving new user
-        self.assertEqual(len(User.user_list),1)
+        self.assertEqual(len(User.user_list),3)
 
 class TestCredentials(unittest.TestCase):
     """
@@ -35,14 +35,34 @@ class TestCredentials(unittest.TestCase):
         unittest.TestCase: helps in creating test cases
     
     """
-
-    def test_check_users(self):
-        """
-        function/method to test whether the login function works as expected
-        """
-        self.new_user = User("Joyce","Nyakinyua","0721317715","joynya123)
+    def test_check_user(self):
+        '''
+        Function to test whether the login in function check_user works as expected
+        '''
+        self.new_user = User("Joyce","Nyakinyua","0721317715","joynya123")
         self.new_user.save_user()
-        user2 = User("James","Muriuki","0712345678", "jamu@ms.com")
+        user2 = User("James", "muriuki", "0716259321","jaymo@ms123")
+        user2.save_user()
+
+        for user in User.user_list:
+            if user.sur_name == user2.sur_name and user.new_password == user2.new_password:
+                current_user = user.sur_name
+        return current_user
+
+        self.assertEqual(current_user,Credential.check_user(user2.new_password,user2.sur_name))
+
+    def setUp(self):
+        """
+        function to set up a method to be used in running each testcase
+        """
+        self.new_credentials = credentials("Instagram", "wanjirunya","nyakinyua254")  
+
+    def test_init(self):
+        """
+        Test to check if initialization of credentiantil instances is done
+        """
+
+
 
 
 if __name__ == '__main__':
