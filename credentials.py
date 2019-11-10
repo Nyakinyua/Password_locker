@@ -56,23 +56,23 @@ class Credentials:
         #     '''
         #     Class method that copies a credential's info after the credential's aaccount name is entered
         #     '''
-        #     find_credential = Credentials.find_by_site_name(account_name)
+        #     find_credential = Credentials.find_by_account(account)
         #     return pyperclip.copy(find_credential.password)
 
-    def delete_credentials(self):
+        def delete_credentials(self):
 
-        '''
-        A method that  deletes a saved credential from the credentials_list
-        '''
+            '''
+            A method that  deletes a saved credential from the credentials_list
+            '''
 
-        Contact.contact_list.remove(self)
+            Credentials.credentials_list.remove(self)
 
  
-    # def generate_password(stringLength):
-    #     """Generate a random string with the combination of lowercase and uppercase letters 
-    #     """
+        def generate_password(stringLength):
+            """Generate a random string with the combination of lowercase and uppercase letters 
+            """
 
-    #     letters = string.ascii_letters
-    #     return made_password(''.join(random.choice(letters) for i in range(stringLength)))
-    # print ("your password  is ", made_password(8))
+            letters = string.ascii_letters
+            made_password =''.join(random.choice(letters) for i in range(stringLength))
+            return made_password
 

@@ -93,48 +93,44 @@ class TestCredentials(unittest.TestCase):
 
     # def test_find_credential_by_account(self):
     #     '''
-    #     Test to check if the find_credential_by_account method returns the correct credential
+    #     test to check if we can find a contact by phone number and display information
     #     '''
+
     #     self.new_credentials.save_credentials()
     #     cred2 = Credentials("Snapchat","Johndoe","snp100")
     #     cred2.save_credentials()
+
     #     credential_exists = Credentials.find_by_account('Snapchat')
-    #     self.assertEqual(credential_exists,cred2)
 
+    #     self.assertEqual(credential_exists.password,test_contact.password)
 
-    def test_find_credential_by_account(self):
-         self.new_credentials.save_credentials()
-         cred2 = Credentials("Snapchat","Johndoe","snp100")
-         cred2.save_credentials()
-
-         found_credential = Credentials.find_by_account('Snapchat')
-
-         self.assertEqual(found_credential,cred2)
+    
+    
     # def test_copy_credential(self):
     #     '''
     #     Test to check if the copy a credential method copies the correct credential
     #     '''
-    #     self.new_credential.save_credentials()
-    #     twitter = Credential('Jane','Twitter','maryjoe','pswd100')
-    #     twitter.save_credentials()
+    #     self.new_credentials.save_credentials()
+    #     cred2 = Credentials("Snapchat","Johndoe","snp100")
+    #     cred2.save_credentials()
     #     find_credential = None
-    #     for credential in Credential.user_credentials_list:
-    #             find_credential =Credential.find_by_site_name(credential.site_name)
+    #     for credentials in Credentials.user_credentials_list:
+    #             find_credential =Credential.find_by_site_name(credential.username)
     #             return pyperclip.copy(find_credential.password)
-    #     Credential.copy_credential(self.new_credential.site_name)
-    #     self.assertEqual('pswd100',pyperclip.paste())
+    #     Credentials.copy_credential(self.new_credential.site_name)
+    #     self.assertEqual('snp100',pyperclip.paste())
     #     print(pyperclip.paste())
 
 
      
-    # def test_delete_credential(self):
+    def test_delete_credential(self):
     
-    #     self.new_credential.save_credential()
-    #     test_credential = Credential("Test","user")
-    #     test_credential.save_credential()
+        self.new_credentials.save_credentials()
+        cred2 = Credentials("Snapchat","Johndoe","snp100")
+        cred2.save_credentials()
         
-    #     self.new_credential.delete_credential()
-    #     self.assertEqual(len(Credential.credential_list),1)
+        self.new_credentials.delete_credentials()
+        self.assertEqual(len(Credentials.credentials_list),1)
 
             
 
