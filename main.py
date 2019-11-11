@@ -171,7 +171,7 @@ def main():
                         store_det = find_credentials(det_account)
                         if store_det.account == det_account:
                             store_det.delete_credentials()
-                            print(f"Deleted {det_account}")
+                            print(f"Deleted account  {det_account}")
 
                             
                        
