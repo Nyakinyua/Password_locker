@@ -42,7 +42,7 @@ def save_credential(credentials):
 	'''
 	Function to save a newly created credential
 	'''
-	Credential.save_credentials(credential)
+	Credentials.save_credentials(credential)
 
 def display_credentials(account):
 	'''
@@ -72,15 +72,16 @@ def main():
 	print(' ')
 	print('Hello! Welcome to Password Locker.')
 	while True:
-		print(' ')
-		print('Use these codes to navigate: \n ca-Create an Account \n li-Log In \n ex-Exit')
+        # print('-'*10)
+        # print('Use these short codes to navigate: \n ca-Create an Account \n li-Log In \n ex-Exit')
 		short_code = input('Enter a choice: ').lower().strip()
 		if short_code == 'ex':
 			break
 
 		elif short_code == 'ca':
-			print("New Account")
-            print("-"*10)
+
+			print(" Please fill the details to create a new Account")
+            # print("-"*10)
 
             print("First name ...")
             f_name = input()
@@ -115,19 +116,19 @@ def main():
 					print("-"*60)
 					if short_code == 'ex':
 						print(" ")
-						print(f'Goodbye {sur_name}')
+						print(f'thanks for signing up with us {sur_name}')
 						break
 					elif short_code == 'cc':
 						print(' ')
 						print('Enter your credential details:')
-						site_name = input('Enter the site\'s name- ').strip()
-						account_name = input('Enter your account\'s name - ').strip()
+						Account_name = input('Enter the Account\'s name- ').strip()
+						user_name = input('Enter your Username - ').strip()
 						while True:
 							print(' ')
-							print("-"*60)
+							print("-"*10)
 							print('Please choose an option for entering a password: \n ep-enter existing password \n gp-generate a password \n ex-exit')
 							psw_choice = input('Enter an option: ').lower().strip()
-							print("-"*60)
+							print("-"*10)
 							if psw_choice == 'ep':
 								print(" ")
 								password = input('Enter your password: ').strip()
@@ -139,17 +140,17 @@ def main():
 								break
 							else:
 								print('Incorrect/ Wrong option entered. Try again.')
-						save_credential(create_credential(user_name,site_name,account_name,password))
+						save_credential(create_credential(Account_name,user_name,password))
 						print(' ')
-						print(f'Credential Created: Site Name: {site_name} - Account Name: {account_name} - Password: {password}')
+						print(f'Credential Created: Account Name: {Account_name} - User Name: {user_name} - Password: {password}')
 						print(' ')
 					elif short_code == 'dc':
 						print(' ')
 						if display_credentials(user_name):
 							print('Here is a list of all your credentials')
 							print(' ')
-							for credential in display_credentials(user_name):
-								print(f'Site Name: {credential.site_name} - Account Name: {credential.account_name} - Password: {credential.password}')
+							for credentials in display_credentials(user_name):
+								print(f'Account name {credentials.Account_name} - User Name: {credentials.user_name} - Password: {credentials.password}')
 							print(' ')	
 						else:
 							print(' ')
@@ -167,10 +168,10 @@ def main():
 				print(' ')
 				print('Incorrect/ Wrong details entered. Try again or Create an Account.')		
 		
-		else:
-			print("-"*60)
-			print(' ')
-			print('Incorrect/ Wrong option entered. Try again.')
+	else:
+		print("-"*60)
+		print(' ')
+		print('Incorrect/ Wrong option entered. Try again.')
 				
 
 

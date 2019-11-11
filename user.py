@@ -38,4 +38,17 @@ class User:
         """
         User.user_list.append(self)
 
+    @classmethod
+    def check_user(cls,sur_name):
+        '''
+        Method that checks if the name and password entered match entries in the users_list
+        '''
+    
+        for user in cls.user_list:
+
+            if user.sur_name == sur_name:
+
+
+                return user
+
 

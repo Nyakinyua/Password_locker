@@ -10,24 +10,15 @@ class Credentials:
         credentials_list = []
         user_credentials_list = []
 
-        @classmethod
-        def check_user(cls,sur_name,new_password):
-            '''
-            Method that checks if the name and password entered match entries in the users_list
-            '''
-            current_user = ''
-            for user in User.user_list:
-                if (user.sur_name == sur_name and user.new_password == new_password):
-                    current_user = user.sur_name
-            return current_user
+        
    
 
    
 
         def __init__(self, account, username, password):
-            self.account_name=account
+            self.account=account
             self.username=username
-            self.acc_password=password
+            self.password=password
 
         def save_credentials(self):
             """
@@ -35,15 +26,16 @@ class Credentials:
             """
             Credentials.credentials_list.append(self)
 
-        def generate_password(stringLength):
+        def generate_password():
             """
             Generate a random string with the combination of lowercase and uppercase letters 
             """
-            get_pass= ''.join(random.choice(letters) for i in range(stringLength))
+            letters = string.ascii_letters
+            get_pass= ''.join(random.choice(letters) for i in range(8))
             return get_pass
 
         @classmethod
-        def display_credentials(cls,account):
+        def display_credentials(cls):
             	 
             return cls.credentials_list
 
@@ -53,7 +45,7 @@ class Credentials:
             """
        
             for credentials in cls.credentials_list:
-                if credentials.account_name == account:
+                if credentials.account == account:
                     return credentials
 
 
