@@ -62,9 +62,9 @@ class TestCredentials(unittest.TestCase):
         """
         Test to check if initialization of credentiantil instances is done
         """
-        self.assertEqual(self.new_credentials.account_name,'Instagram')
+        self.assertEqual(self.new_credentials.account,'Instagram')
         self.assertEqual(self.new_credentials.username,'wanjirunya')
-        self.assertEqual(self.new_credentials.acc_password,'nyakinyua254')
+        self.assertEqual(self.new_credentials.password,'nyakinyua254')
 
     def test_save_credentials(self):
         """
@@ -88,7 +88,7 @@ class TestCredentials(unittest.TestCase):
         cred2.save_credentials()
         gmail = Credentials('Gmail','maryjoe','pswd200')
         gmail.save_credentials()
-        self.assertEqual(len(Credentials.display_credentials(cred2.username)),3)
+        self.assertEqual(len(Credentials.display_credentials()),3)
 
 
     def test_find_credential_by_account(self):
@@ -100,9 +100,9 @@ class TestCredentials(unittest.TestCase):
         cred2 = Credentials("Snapchat","Johndoe","snp100")
         cred2.save_credentials()
 
-        credential_exists = Credentials.find_by_account('Snapchat')
+        credential_exists = Credentials.find_by_account("Johndoe")
 
-        self.assertEqual(credential_exists.password,test_contact.password)
+        self.assertEqual(credential_exists.account,cred2.account)
 
     
     

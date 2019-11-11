@@ -38,15 +38,16 @@ class Credentials:
         def display_credentials(cls):
             	 
             return cls.credentials_list
-
-        def find_by_account(cls,account):
+        
+        @classmethod
+        def find_by_account(cls, username):
             """
             Method that takes in account name and returns the credentials
             """
        
-            for credentials in cls.credentials_list:
-                if credentials.account == account:
-                    return credentials
+            for credential in cls.credentials_list:
+                if credential.username == username:
+                    return credential
 
 
 

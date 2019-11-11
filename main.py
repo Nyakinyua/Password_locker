@@ -68,7 +68,7 @@ def find_credentials(account):
     '''
     function that finds a credential by account and returns the credential
     '''
-    return credentials.find_by_account(account)
+    return Credentials.find_by_account(account)
 
 def main():
     print(' ')
@@ -176,7 +176,7 @@ def main():
                             
                        
                         else:
-                        print('Incorrect/ Wrong option entered. Try again.')
+                            print('Incorrect/ Wrong option entered. Try again.')
 
                     else: 
                         print(' ')
