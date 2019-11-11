@@ -40,27 +40,21 @@ class Credentials:
             return cls.credentials_list
         
         @classmethod
-        def find_by_account(cls, username):
+        def find_by_account(cls, account):
             """
             Method that takes in account name and returns the credentials
             """
        
             for credential in cls.credentials_list:
-                if credential.username == username:
+                if credential.account == account:
                     return credential
 
 
 
-        # @classmethod
-	    # def copy_credential(cls,account):
-        #     '''
-        #     Class method that copies a credential's info after the credential's aaccount name is entered
-        #     '''
-        #     find_credential = Credentials.find_by_account(account)
-        #     return pyperclip.copy(find_credential.password)
 
+        
         def delete_credentials(self):
-
+    
             '''
             A method that  deletes a saved credential from the credentials_list
             '''

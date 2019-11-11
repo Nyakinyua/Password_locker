@@ -100,9 +100,9 @@ class TestCredentials(unittest.TestCase):
         cred2 = Credentials("Snapchat","Johndoe","snp100")
         cred2.save_credentials()
 
-        credential_exists = Credentials.find_by_account("Johndoe")
+        credential_exists = Credentials.find_by_account("Snapchat")
 
-        self.assertEqual(credential_exists.account,cred2.account)
+        self.assertEqual(credential_exists.password,cred2.password)
 
     
     

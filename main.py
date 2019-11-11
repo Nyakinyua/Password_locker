@@ -62,7 +62,7 @@ def del_credentials(credentials):
     """
     function to delete a credential from credentials list
     """
-    credentials.delete_ceredentials()
+    credentials.delete_credentials()
 
 def find_credentials(account):
     '''
@@ -170,7 +170,7 @@ def main():
                         det_account = input()
                         store_det = find_credentials(det_account)
                         if store_det.account == det_account:
-                            store_det.delete_ceredentials()
+                            store_det.delete_credentials()
                             print(f"Deleted {det_account}")
 
                             
