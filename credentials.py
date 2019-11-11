@@ -58,13 +58,13 @@ class Credentials:
 
 
 
-        @classmethod
-	    def copy_credential(cls,account):
-            '''
-            Class method that copies a credential's info after the credential's aaccount name is entered
-            '''
-            find_credential = Credentials.find_by_account(account)
-            return pyperclip.copy(find_credential.password)
+        # @classmethod
+	    # def copy_credential(cls,account):
+        #     '''
+        #     Class method that copies a credential's info after the credential's aaccount name is entered
+        #     '''
+        #     find_credential = Credentials.find_by_account(account)
+        #     return pyperclip.copy(find_credential.password)
 
         def delete_credentials(self):
 
